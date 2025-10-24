@@ -23,3 +23,10 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
         alert('Please fill in all fields.');
     }
 });
+
+window.addEventListener("scroll", () => {
+  const overlay = document.getElementById("overlay");
+  const scrollY = window.scrollY;
+  const opacity = Math.min(0.3 + scrollY / 600, 0.7);
+  overlay.style.background = `rgba(0, 0, 0, ${opacity})`;
+});
